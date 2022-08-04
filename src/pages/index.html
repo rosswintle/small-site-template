@@ -1,0 +1,15 @@
+<?php extend('../templates/main.html', ['title' => 'Home Page']) ?>
+
+<?php
+// Page content here
+// To include partials use:
+// includePart('../parts/some-part.html', ['param' => 'value'])
+?>
+
+<h1 class="mt-8 text-6xl text-center">Hello, World!</h1>
+
+<?php if (ENVIRONMENT === 'DEVELOPMENT') : ?>
+    <h2 class="mt-4 text-2xl text-center">Sssh, we're only testing!</h2>
+<?php endif; ?>
+
+<?php endExtend(); ?>

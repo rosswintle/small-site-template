@@ -1,0 +1,23 @@
+{
+  "name": "small-site-template",
+  "version": "1.0.0",
+  "description": "A template for a small site using a simple PHP build process, TailwindCSS and AlpineJS",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build:dev": "npx tailwindcss -i ./src/css/styles.css -o ./public/css/styles.css",
+    "build:prod": "npx tailwindcss -i ./src/css/styles.css -o ./public/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosswintle/small-site-template.git"
+  },
+  "author": "Ross Wintle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rosswintle/small-site-template/issues"
+  },
+  "homepage": "https://github.com/rosswintle/small-site-template#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.7"
+  }
+}
