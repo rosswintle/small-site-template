@@ -1,2 +1,2 @@
 <?php
-define('ENVIRONMENT', 'STAGING');
+define('ENVIRONMENT', 'PRODUCTION');

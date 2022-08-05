@@ -4,8 +4,8 @@
   "description": "A template for a small site using a simple PHP build process, TailwindCSS and AlpineJS",
   "main": "tailwind.config.js",
   "scripts": {
-    "build:dev": "npx tailwindcss -i ./src/css/styles.css -o ./public/css/styles.css",
-    "build:prod": "npx tailwindcss -i ./src/css/styles.css -o ./public/css/styles.css"
+    "build:dev": "npx tailwindcss build -i ./src/css/styles.css -o ./public/css/styles.css",
+    "build:prod": "NODE_ENV=production npx tailwindcss-cli@latest build -i ./src/css/styles.css -o ./public/css/styles.css"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rosswintle/small-site-template#readme",
   "devDependencies": {
-    "tailwindcss": "^3.1.7"
+    "tailwindcss": "^3.1.7",
+    "@tailwindcss/forms": "^0.4"
   }
 }
