@@ -154,9 +154,9 @@ function build()
 
 if (isset($_SERVER['argv'][1]) && '--prod' === $_SERVER['argv'][1]) {
     echo "Running production\n\n";
-    include('./env.prod.php');
+    include './env.prod.php';
 } else {
-    include('./env.php');
+    include './env.php';
 }
 
 build();
