@@ -28,7 +28,16 @@ See [this issue](https://github.com/tailwindlabs/tailwindcss/issues/4097)
 
 Requires node to be installed. Probably a recent version.
 
+If you have a GitHub account, the best way to get started with this repository
+is to click the "Use this template" button above. ([Read more about
+creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template))
+
+If you don't have a GitHub account, or don't want to use the GitHub template feature,
+you can clone this repository and then remove the `.git` directory to start.
+
 * `git clone git@github.com:rosswintle/small-site-template.git <directory>`
+* `cd <directory>`
+* `rm -r .git`
 * `npm install`
 * `./build.sh` or `./prod.sh`
 
