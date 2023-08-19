@@ -1,6 +1,6 @@
 {
   "name": "small-site-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A template for a small site using a simple PHP build process, TailwindCSS and AlpineJS",
   "main": "tailwind.config.js",
   "scripts": {
@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/rosswintle/small-site-template#readme",
   "devDependencies": {
-    "tailwindcss": "^3.1.7",
-    "@tailwindcss/forms": "^0.4"
+    "@tailwindcss/forms": "^0.5.4",
+    "tailwindcss": "^3.3.2",
+    "@tailwindcss/typography": "^0.5.9"
+  },
+  "dependencies": {
   }
 }
