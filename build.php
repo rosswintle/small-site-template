@@ -31,16 +31,14 @@
 
 $inPath  = __DIR__ . '/src/pages';
 $outPath = __DIR__ . '/public';
-$savedTemplatePath = null;
-$savedTemplateVariables = [];
+$savedTemplatePathStack = [];
+$savedTemplateVariablesStack = [];
 
 function includePart(string $relativePath, array $variables = [], bool $print = true)
 {
     $calledBy = debug_backtrace()[0]['file'];
 
     $actualPath = dirname($calledBy) . '/' . $relativePath;
-
-    $output = NULL;
 
     if (! file_exists($actualPath)) {
         echo("\n\nERROR: Part $actualPath doesn't exist\n\n");
@@ -67,15 +65,15 @@ function includePart(string $relativePath, array $variables = [], bool $print = 
 
 function extend(string $template, array $variables)
 {
-    global $savedTemplatePath, $savedTemplateVariables;
+    global $savedTemplatePathStack, $savedTemplateVariablesStack;
 
     $calledBy = debug_backtrace()[0]['file'];
 
     $actualPath = dirname($calledBy) . '/' . $template;
 
-    $savedTemplatePath = $actualPath;
+    array_push($savedTemplatePathStack, $actualPath);
 
-    $savedTemplateVariables = $variables;
+    array_push($savedTemplateVariablesStack, $variables);
 
     // Start output buffering
     ob_start();
@@ -83,16 +81,16 @@ function extend(string $template, array $variables)
 
 function endExtend()
 {
-    global $savedTemplatePath, $savedTemplateVariables;
+    global $savedTemplatePathStack, $savedTemplateVariablesStack;
 
     // End output buffering of content
     $content = ob_get_clean();
 
-    extract($savedTemplateVariables);
+    extract(array_pop($savedTemplateVariablesStack));
 
     ob_start();
 
-    include $savedTemplatePath;
+    include array_pop($savedTemplatePathStack);
 
     $output = ob_get_clean();
 
