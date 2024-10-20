@@ -6,23 +6,24 @@ Read about this [in my blog post](https://rosswintle.uk/2022/08/why-i-love-and-h
 
 ## Notes
 
-1. This repo is *not* a library/dependence/framework. You should fork it and use it as a template for your own thing.
+1. This repo is _not_ a library/dependence/framework. It is a template for you to
+   copy and user to start a new project. In GitHub there should be a
+   "Use this template" button above. Use that to create a new project/repository.
 2. It's using HTML, TailwindCSS, and a PHP build script. AlpineJS is included if you want to use it.
 3. You will need PHP installed locally. Probably v7.4 or higher. Not sure.
 
 The template comes with:
 
-* A REALLY simple HTML build that allows templates and partials
-* Tailwind CSS
-* Tailwind Forms plugin
-* build.sh script to dev build (no CSS purge)
-* prod.sh script to prod build (with CSS purge)
+- A REALLY simple HTML build that allows templates and partials
+- Tailwind CSS
+- Tailwind Forms plugin
+- Tailwind Typography plugin
+- AlpineJS
+- build.sh script to dev build (no CSS purge)
+- prod.sh script to prod build (with CSS purge)
+- watch.sh script to watch for changes, rebuild and sort-of live reload
 
 It does NOT come with:
-
-* A watch script or hot reloading or anything. This will come when
-[JIT](https://tailwindcss.com/docs/just-in-time-mode) is released properly.
-See [this issue](https://github.com/tailwindlabs/tailwindcss/issues/4097)
 
 ## Usage
 
@@ -35,11 +36,11 @@ creating a repository from a template](https://docs.github.com/en/repositories/c
 If you don't have a GitHub account, or don't want to use the GitHub template feature,
 you can clone this repository and then remove the `.git` directory to start.
 
-* `git clone git@github.com:rosswintle/small-site-template.git <directory>`
-* `cd <directory>`
-* `rm -r .git`
-* `npm install`
-* `./build.sh` or `./prod.sh`
+- `git clone git@github.com:rosswintle/small-site-template.git <directory>`
+- `cd <directory>`
+- `rm -r .git`
+- `npm install`
+- `./build.sh` or `./prod.sh` or `./watch.sh`
 
 ## Templates
 
@@ -79,4 +80,5 @@ Partials can be included and passed an array of variables.
 
 ## Purging CSS
 
-Note that if you add HTML files in other directories, make sure you add them to the purge list in `tailwind.config.js` if needed.
+Note that if you add HTML files in other directories, make sure you add them to the purge list in `tailwind.config.js` and the `$directories` array in `watch.php`
+if needed.
