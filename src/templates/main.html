@@ -3,11 +3,15 @@
 
 <?php includePart('../parts/head.html', ['title' => $title]) ?>
 
-<?php includePart('../parts/header.html'); ?>
 
 <body>
-    <?= $content ?>
+    <?php includePart('../parts/header.html'); ?>
+
+    <main class="container max-w-screen-lg mx-auto px-8 py-8 border border-slate-200">
+        <?= $content ?>
+    </main>
 
     <?php includePart('../parts/footer.html') ?>
 </body>
+
 </html>
