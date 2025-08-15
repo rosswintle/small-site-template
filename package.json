@@ -1,6 +1,6 @@
 {
     "name": "small-site-template",
-    "version": "2.0.0a",
+    "version": "2.0.0",
     "description": "A template for a small site using a simple PHP build process, TailwindCSS and AlpineJS",
     "main": "tailwind.config.js",
     "scripts": {
